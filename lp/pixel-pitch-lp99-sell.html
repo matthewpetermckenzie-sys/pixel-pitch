@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pixel & Pitch $99 focus page — one offer, one CTA, same-week HTML for indie tools and asset shops.">
+<meta property="og:title" content="Pixel & Pitch — $99 Landing Page">
+<meta property="og:description" content="$99 focus page: one offer, one CTA, same-week HTML handoff.">
+<meta property="og:type" content="website">
+<title>Pixel & Pitch — $99 Landing Page</title>
+<style>
+:root{
+  --bg:#14141c; --bg2:#1c1c28; --panel:#272732; --line:rgba(245,238,223,.14);
+  --cream:#f5eedf; --dim:#b9b0a0; --orange:#efaa61; --mint:#9dd3bc; --ink:#15151c;
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit} .wrap{width:min(980px,calc(100% - 32px));margin:0 auto}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(20,20,28,.92);backdrop-filter:blur(8px);z-index:10}
+.brand{font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:.78rem}
+.btn{display:inline-block;background:var(--orange);color:var(--ink);border:0;padding:13px 18px;border-radius:10px;font-weight:800;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--cream)}
+.hero{padding:72px 0 56px;display:grid;gap:28px;grid-template-columns:1.15fr .85fr;align-items:start}
+h1{font-size:clamp(2.1rem,4.2vw,3.1rem);line-height:1.08;margin:0 0 14px}
+.lead{color:var(--dim);font-size:1.05rem;margin:0 0 22px;max-width:36rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cta-sub{display:block;text-align:center;margin-top:8px;font-size:.85rem;color:var(--dim,#b9b0a0)}
+.cta-sub a{color:var(--mint,#9dd3bc);text-decoration:none}
+
+.hero-actions .btn{text-align:center}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.price{font-size:2.4rem;font-weight:900;color:var(--mint);line-height:1}
+.price span{font-size:.95rem;color:var(--dim);font-weight:600}
+.checklist{margin:16px 0 0;padding:0;list-style:none}
+.checklist li{padding:8px 0;border-bottom:1px solid var(--line);color:var(--cream)}
+.checklist li:last-child{border:0}
+.muted{color:var(--dim);font-size:.92rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:8px 0 48px}
+.section{padding:28px 0 8px;border-top:1px solid var(--line)}
+h2{font-size:1.35rem;margin:0 0 8px}
+h3{margin:0 0 8px;font-size:1.02rem}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.faq summary{cursor:pointer;font-weight:700}
+.cta-bar{margin:36px 0 64px;padding:28px;border-radius:18px;background:linear-gradient(135deg,rgba(239,170,97,.16),rgba(157,211,188,.08));border:1px solid var(--line);display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.foot{padding:28px 0 48px;border-top:1px solid var(--line);color:var(--dim);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:820px){
+  .wrap{width:min(980px,calc(100% - 24px))}
+  .nav{padding:14px 0;gap:12px}
+  .nav .btn{padding:10px 12px;font-size:.85rem}
+  .hero{padding:40px 0 36px;grid-template-columns:1fr;gap:20px}
+  h1{font-size:clamp(1.75rem,7vw,2.4rem)}
+  .lead{font-size:1rem}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .card{padding:18px}
+  .price{font-size:2.1rem}
+  .grid3{grid-template-columns:1fr;gap:12px;padding-bottom:36px}
+  .section{padding:22px 0 4px}
+  .cta-bar{align-items:stretch;flex-direction:column;margin:28px 0 40px;padding:20px}
+  .cta-bar .btn{width:100%;text-align:center}
+  #pay-cta{width:100%;text-align:center;display:block}
+  .foot{flex-direction:column;gap:6px;padding:22px 0 36px}
+}
+
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 0 36px}
+.proof .card{padding:14px 16px}
+.proof strong{display:block;margin-bottom:2px}
+.steps{margin:0 0 8px;padding:0;list-style:none;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:flex-start;color:var(--dim)}
+.steps b{color:var(--orange);min-width:1.4rem}
+.sticky-cta{position:sticky;bottom:0;z-index:20;padding:12px 0 calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,rgba(20,20,28,.97) 30%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.sticky-cta .btn{display:block;width:100%;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,.45);padding:14px 16px;font-size:1rem}
+.sticky-cta .hint{display:none;margin:0 0 8px;text-align:center;font-size:.72rem;color:var(--muted,#9aa3b5);letter-spacing:.02em}
+@media(max-width:820px){
+  .sticky-cta{margin-left:-16px;margin-right:-16px;padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(42,49,64,.7);background:rgba(20,20,28,.98)}
+  .sticky-cta .hint{display:block}
+  .sticky-cta .btn{padding:15px 16px;font-size:1.02rem;border-radius:12px}
+}
+.note-box{margin:8px 0 28px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--dim);font-size:.9rem}
+@media(max-width:820px){.proof{grid-template-columns:1fr}}
+
+  .pay-slot{margin:16px 0;padding:14px 16px;border:1px dashed rgba(240,180,41,.45);border-radius:12px;background:rgba(240,180,41,.06)}
+  .pay-slot strong{display:block;color:#f0b429;margin-bottom:6px}
+  .btn-pay{display:inline-block;padding:.55rem .9rem;border-radius:10px;border:1px dashed rgba(240,180,41,.55);color:#f0b429;text-decoration:none;font-size:.85rem}
+  .btn-pay[data-ready="1"]{border-style:solid;background:rgba(240,180,41,.12)}
+  .pay-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <div class="brand">Pixel &amp; Pitch</div>
+    <a class="btn btn-ghost" href="faq.html" style="padding:8px 12px;font-size:.8rem">FAQ</a>
+    <a class="btn" href="#buy">Book $99</a>
+  </div><section class="hero">
+    <div>
+      <h1>Focus page — one screen, one CTA. $99.</h1>
+      <p class="lead">For a single SKU that needs a buy page this week — not a 12-section marketing site. You send the offer; I ship HTML same week.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#buy">Book $99 — jump to checkout</a>
+        <a class="btn btn-ghost" href="#what">What’s included</a>
+              <a class="btn btn-ghost" href="thanks.html">After you email — next steps</a>
+      </div>
+      <p class="muted" style="margin-top:18px">Same-week turnaround · one HTML file · email to book · pay when live</p>
+    </div>
+    <div class="card" id="buy">
+      <div class="price">$99 <span>USD</span></div>
+      <p class="muted">One-screen focus page · hard CTA · your name, offer, and screenshots slotted in</p>
+      <ul class="checklist">
+        <li>Hero + primary CTA</li>
+        <li>3 benefit cards</li>
+        <li>Proof / logos slot</li>
+        <li>Short FAQ (5)</li>
+        <li>Mobile layout pass</li>
+      </ul>
+      <p style="margin:18px 0 8px">
+        <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A" id="pay-cta">Book $99 — email now</a>
+<div class="pay-slot" id="pay-links" style="margin:16px 0;padding:14px 16px;border:1px dashed rgba(240,180,41,.45);border-radius:12px;background:rgba(240,180,41,.06)">
+  <strong style="display:block;color:#f0b429;margin-bottom:6px">Pay when live</strong>
+  <p style="margin:0 0 8px;color:#9aa3b5;font-size:.85rem">Email to book works now. When PayPal.Me / Interac lands, this tier's pay button goes live.</p>
+      <p style="margin:0;font-size:.78rem">Invoice / PayPal on accept · deposit before work</p>
+<p style="margin:0;font-size:.78rem;color:#f3efe6">Invoice / PayPal on accept · deposit before work</p>
+    <div class="pay-row">
+      <!-- PAY_LINK_99 -->
+      <a class="btn-pay" data-tier="99" data-pay-url="" href="#pay-pending-99">Pay $99 — pending</a>
+      <!-- PAY_LINK_149 -->
+      <a class="btn-pay" data-tier="149" data-pay-url="" href="#pay-pending-149">Pay $149 — pending</a>
+      <!-- PAY_LINK_249 -->
+      <a class="btn-pay" data-tier="249" data-pay-url="" href="#pay-pending-249">Pay $249 — pending</a>
+      <!-- PAY_LINK_449 -->
+      <a class="btn-pay" data-tier="449" data-pay-url="" href="#pay-pending-449">Pay $449 — pending</a>
+    </div>
+</div>
+
+      </p>
+      <div class="cta-sub"><a href="thanks.html">What happens next →</a></div>
+      <p class="muted">Memo: <strong>Pixel &amp; Pitch — LP $99</strong> · email opens with your details ready.</p>
+    </div>
+  </section>
+
+  <div class="proof">
+    <div class="card"><strong>Same week</strong><span class="muted">Typical turnaround</span></div>
+    <div class="card"><strong>One HTML file</strong><span class="muted">Host anywhere</span></div>
+    <div class="card"><strong>$99 focus</strong><span class="muted">One offer, one CTA</span></div>
+  </div>
+
+  <section class="section" id="how">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><b>1</b><span>Email product name + one-line offer (screenshots optional).</span></li>
+      <li><b>2</b><span>I reply same day with the pay link (when wired).</span></li>
+      <li><b>3</b><span>You get a finished $99 focus page — hero, proof, price, FAQ, hard CTA.</span></li>
+    </ol>
+  </section>
+
+  <section class="section" id="what">
+    <h2>What you get</h2>
+    <p class="muted">Not a 12-section marketing site. A tight page that makes the offer obvious.</p>
+    <div class="grid3">
+      <div class="card"><h3>Clear offer</h3><p class="muted">One price, one button, no scavenger hunt.</p></div>
+      <div class="card"><h3>Fast swap</h3><p class="muted">Drop in your screenshots and product name.</p></div>
+      <div class="card"><h3>Readable chrome</h3><p class="muted">Warm, product-feeling UI — not generic SaaS sludge.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Who it’s for</h2>
+    <div class="grid3">
+      <div class="card"><h3>Game asset sellers</h3><p class="muted">Asset packs and tools — need a clean buy page yesterday.</p></div>
+      <div class="card"><h3>Indie tools</h3><p class="muted">One feature set, one price, visitors who bounce on confusion.</p></div>
+      <div class="card"><h3>Solo launches</h3><p class="muted">You have screenshots. You don’t need a full brand agency.</p></div>
+    </div>
+  </section>
+
+
+  <section class="section" id="proof">
+    <h2>Why this spine converts</h2>
+    <p class="muted">Built for one decision — buy or bounce. No scavenger hunt.</p>
+    <div class="grid3">
+      <div class="card"><h3>Price above the fold</h3><p class="muted">$99 and the primary button sit in the hero. No scroll hunt.</p></div>
+      <div class="card"><h3>One CTA path</h3><p class="muted">Email to book → pay when live. Sticky bar on mobile.</p></div>
+      <div class="card"><h3>Host anywhere</h3><p class="muted">One HTML file — itch, Netlify, GitHub Pages, or your domain.</p></div>
+    </div>
+  </section>
+
+  <section class="section faq">
+    <h2>FAQ</h2>
+    <details><summary>What’s the turnaround?</summary><p class="muted">Usually same week after you send name, offer, price, and 2–5 screenshots.</p></details>
+    <details><summary>What do I need to send?</summary><p class="muted">Product name, one-sentence offer, price, CTA text, screenshots/logo, and where you want buyers to pay.</p></details>
+    <details><summary>Do I get the HTML?</summary><p class="muted">Yes — a single self-contained HTML file you can host anywhere (itch, Netlify, GitHub Pages, your domain).</p></details>
+    <details><summary>Revisions?</summary><p class="muted">One revision pass included on copy/layout. Bigger scope jumps to the $149+ tiers.</p></details>
+    <details><summary>How do I pay?</summary><p class="muted">PayPal.Me or Interac. Use memo <strong>Pixel &amp; Pitch — LP $99</strong>. Live link goes in the orange button above.</p></details>
+  </section>
+
+  <div class="cta-bar">
+    <div>
+      <strong>Book the $99 focus page</strong>
+      <p class="muted" style="margin:6px 0 0">Email the offer — pay when live. Same-week HTML.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A">Book $99</a><a class="btn btn-ghost" id="cta-email" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A">Email to start</a></div>
+  </div>
+
+
+  <div class="sticky-cta">
+    <div class="hint">Email to book · pay when live</div>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A">Book $99 — email now</a>
+    <div class="cta-sub" style="margin-top:6px;opacity:.85;text-align:center">Pay when live — slots pending</div>
+    <div class="cta-sub"><a href="thanks.html">Next steps after you send →</a></div>
+  </div>
+
+  <div class="note-box"><strong>What you send:</strong> product name, one-line offer, price (optional screenshots). <strong>What you get:</strong> one production HTML file, same week.</div>
+
+  <div class="foot">
+    <div>Pixel &amp; Pitch · Landing pages for indie offers</div>
+    <div>Tiers: $99 · $149 · $249 · $449</div>
+  </div>
+</div>
+</body>
+</html>

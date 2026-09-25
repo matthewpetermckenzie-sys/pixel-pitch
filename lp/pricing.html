@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pixel & Pitch LP pricing — $99 focus, $149 sell (most booked), $249 launch, $449 flagship. Compare tiers and email to book.">
+<meta property="og:title" content="Pricing — Pixel & Pitch landing pages">
+<meta property="og:description" content="$99 / $149 / $249 / $449 — pick a spine, email to book, pay when live.">
+<meta property="og:type" content="website">
+<title>Pricing — Pixel & Pitch</title>
+<style>
+:root{--bg:#0b0d12;--card:#141821;--line:#2a3140;--cream:#f3efe6;--muted:#9aa3b5;--accent:#7dd3c7;--accent2:#f0b429}
+*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--cream);line-height:1.5}
+.wrap{width:min(720px,calc(100% - 32px));margin:0 auto;padding:40px 0 calc(96px + env(safe-area-inset-bottom,0px))}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.nav a{color:var(--cream);text-decoration:none}.nav a:hover{color:var(--accent)}
+.eyebrow{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.85rem,5.5vw,2.45rem);letter-spacing:-.03em;margin:0 0 12px;line-height:1.12}
+.lead{color:var(--muted);font-size:1.05rem;margin:0 0 24px}
+h2{font-size:1.05rem;margin:28px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 12px}
+.card.hot{border-color:var(--accent2);box-shadow:0 0 0 1px rgba(240,180,41,.25)}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em}
+.price{font-weight:800;font-size:1.45rem;color:var(--accent2)}
+.card p{margin:0 0 10px;color:var(--muted);font-size:.92rem}
+.card ul{margin:0 0 14px;padding:0 0 0 1.1rem;color:var(--muted);font-size:.9rem}
+.card li{margin:4px 0}
+.btn{display:block;text-align:center;background:var(--accent2);color:#111;font-weight:700;text-decoration:none;padding:12px 14px;border-radius:11px}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--cream);margin-top:8px}
+.sample{margin-top:8px;font-size:.85rem;text-align:center}.sample a{color:var(--accent);text-decoration:none}
+.compare{width:100%;border-collapse:collapse;font-size:.88rem;margin:0 0 20px}
+.compare th,.compare td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.compare th{background:var(--card);color:var(--cream);font-weight:700}
+.compare td{color:var(--muted)}
+.compare .yes{color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:12px 18px;font-size:.9rem;margin:18px 0}
+.links a{color:var(--accent);text-decoration:none}
+.sticky{position:sticky;bottom:0;z-index:20;margin-top:24px;padding:12px 0 calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,rgba(11,13,18,.97) 28%);backdrop-filter:blur(8px)}
+.sticky .btn{width:100%;box-shadow:0 8px 28px rgba(0,0,0,.45);padding:14px 16px}
+.sticky .hint{display:none;margin:0 0 8px;text-align:center;font-size:.72rem;color:var(--muted)}
+.cta-sub{display:none;text-align:center;margin-top:8px;font-size:.85rem}.cta-sub a{color:var(--accent);text-decoration:none}
+.note{margin-top:14px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:.88rem}
+.foot{margin-top:24px;color:var(--muted);font-size:.78rem}
+@media(max-width:600px){
+  .wrap{padding:28px 0 calc(108px + env(safe-area-inset-bottom,0px))}
+  .compare{display:none}
+  .sticky{margin-left:-16px;margin-right:-16px;padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(42,49,64,.7);background:rgba(11,13,18,.98)}
+  .sticky .hint,.cta-sub{display:block}
+}
+
+  .pay-slot{margin:16px 0;padding:14px 16px;border:1px dashed rgba(240,180,41,.45);border-radius:12px;background:rgba(240,180,41,.06)}
+  .pay-slot strong{display:block;color:#f0b429;margin-bottom:6px}
+  .btn-pay{display:inline-block;padding:.55rem .9rem;border-radius:10px;border:1px dashed rgba(240,180,41,.55);color:#f0b429;text-decoration:none;font-size:.85rem}
+  .btn-pay[data-ready="1"]{border-style:solid;background:rgba(240,180,41,.12)}
+  .pay-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">  <div class="nav">
+    <span><a href="index.html">Pixel &amp; Pitch</a> · <a href="offer.html">Offer</a> · <a href="book.html">Book</a></span>
+    <span>Pricing</span>
+  </div>
+
+  <div class="eyebrow">$99 – $449</div>
+  <h1>Pick a spine. Email to book. Pay when live.</h1>
+  <p class="lead">All tiers deliver one production HTML file. Difference is conversion surface — not a framework.</p>
+
+  <h2 class="desk-only">At a glance</h2>
+  <table class="compare" aria-label="Tier comparison">
+    <thead>
+      <tr><th>Includes</th><th>$99</th><th>$149</th><th>$249</th><th>$449</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Hero + hard CTA</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Proof / FAQ</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Feature + pricing blocks</td><td>—</td><td>—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Custom map + compare</td><td>—</td><td>—</td><td>—</td><td class="yes">✓</td></tr>
+      <tr><td>Revision passes</td><td>1</td><td>1</td><td>2</td><td>3</td></tr>
+    </tbody>
+  </table>
+
+  <div class="card hot">
+    <div class="row"><div><span class="tag">Most booked</span><div><strong>$149 — Sell page</strong></div></div><span class="price">$149</span></div>
+    <p>Proof strip, deeper FAQ, dual CTA. Default for indie tools and asset shops.</p>
+    <ul>
+      <li>Everything in $99</li>
+      <li>Proof / testimonials row</li>
+      <li>Expanded FAQ + second close</li>
+    </ul>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24149&body=Hi%20%E2%80%94%20I%20want%20the%20%24149%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $149</a>
+<div id="pay-links" class="pay-slot" style="margin:16px 0;padding:14px 16px;border:1px dashed rgba(240,180,41,.45);border-radius:12px;background:rgba(240,180,41,.06)">
+  <strong style="display:block;color:#f0b429;margin-bottom:6px">Pay when live</strong>
+  <p style="margin:0 0 8px;color:#9aa3b5;font-size:.85rem">Email to book works now. When PayPal.Me / Interac URLs land, tier pay buttons go live — until then placeholders stay pending.</p>
+  <p style="margin:0;font-size:.78rem;color:#f3efe6">Invoice / PayPal on accept · deposit before work</p>
+    <div class="pay-row">
+      <!-- PAY_LINK_99 -->
+      <a class="btn-pay" data-tier="99" data-pay-url="" href="#pay-pending-99">Pay $99 — pending</a>
+      <!-- PAY_LINK_149 -->
+      <a class="btn-pay" data-tier="149" data-pay-url="" href="#pay-pending-149">Pay $149 — pending</a>
+      <!-- PAY_LINK_249 -->
+      <a class="btn-pay" data-tier="249" data-pay-url="" href="#pay-pending-249">Pay $249 — pending</a>
+      <!-- PAY_LINK_449 -->
+      <a class="btn-pay" data-tier="449" data-pay-url="" href="#pay-pending-449">Pay $449 — pending</a>
+    </div>
+</div>
+
+    <div class="sample"><a href="pixel-pitch-lp149-sell.html">See $149 sample →</a></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><span class="tag">Starter</span><div><strong>$99 — Focus page</strong></div></div><span class="price">$99</span></div>
+    <p>One screen: hero, proof line, hard CTA. Best for a single SKU.</p>
+    <ul>
+      <li>Hero + primary CTA</li>
+      <li>3 benefit cards + short FAQ</li>
+      <li>Mobile layout pass</li>
+    </ul>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $99</a>
+    <div class="sample"><a href="pixel-pitch-lp99-sell.html">See $99 sample →</a></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><span class="tag">Launch</span><div><strong>$249 — Multi-section</strong></div></div><span class="price">$249</span></div>
+    <p>Feature grid, pricing block, proof, FAQ — still one HTML file.</p>
+    <ul>
+      <li>Everything in $149</li>
+      <li>Feature / section grid</li>
+      <li>Pricing / tier comparison block</li>
+      <li>Two revision passes</li>
+    </ul>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24249&body=Hi%20%E2%80%94%20I%20want%20the%20%24249%20landing%20page.%0A%0A">Email to book $249</a>
+    <div class="sample"><a href="pixel-pitch-lp249-sell.html">See $249 sample →</a></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><span class="tag">Flagship</span><div><strong>$449 — Custom map</strong></div></div><span class="price">$449</span></div>
+    <p>Section map built around your offer. Comparison block. Three revisions.</p>
+    <ul>
+      <li>Everything in $249</li>
+      <li>Custom section map</li>
+      <li>You vs status quo compare</li>
+      <li>Three revision passes</li>
+    </ul>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24449&body=Hi%20%E2%80%94%20I%20want%20the%20%24449%20flagship%20page.%0A%0A">Email to book $449</a>
+    <div class="sample"><a href="pixel-pitch-lp449-sell.html">See $449 sample →</a></div>
+  </div>
+
+  <div class="links">
+    <a href="offer.html">Short offer</a>
+    <a href="book.html">Book hub</a>
+    <a href="faq.html">FAQ</a>
+    <a href="thanks.html">After you book</a>
+  </div>
+
+  <div class="sticky">
+    <div class="hint">Email to book · pay when live</div>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24149&body=Hi%20%E2%80%94%20I%20want%20the%20%24149%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Book $149 — email now</a>
+    <div class="cta-sub" style="margin-top:6px;opacity:.85;text-align:center">Pay when live — slots pending</div>
+    <div class="cta-sub"><a href="thanks.html">Next steps after you send →</a></div>
+  </div>
+
+  <div class="note"><strong>What you send:</strong> product name, one-line offer, price (optional screenshots). <strong>What you get:</strong> pay when live · one HTML file same week.</div>
+  <div class="foot">Pixel &amp; Pitch · landing pages for indie offers · <a href="faq.html" style="color:var(--accent)">FAQ</a></div>
+</div>
+</body>
+</html>

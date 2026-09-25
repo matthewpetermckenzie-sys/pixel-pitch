@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pixel & Pitch builds one-offer landing pages for indie tools and asset shops. $99–$449. Email to start.">
+<meta property="og:title" content="Same-week buy pages ($99–$449) — Pixel & Pitch">
+<meta property="og:description" content="One page. One offer. Same-week HTML. Email to book $99–$449.">
+<meta property="og:type" content="website">
+<title>Landing pages for indie offers — Pixel & Pitch</title>
+<style>
+:root{--bg:#0b0d12;--card:#141821;--line:#2a3140;--cream:#f3efe6;--muted:#9aa3b5;--accent:#7dd3c7;--accent2:#f0b429}
+*{box-sizing:border-box}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--cream);line-height:1.5}
+.wrap{width:min(680px,calc(100% - 32px));margin:0 auto;padding:40px 0 96px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.nav a{color:var(--cream);text-decoration:none}.nav a:hover{color:var(--accent)}
+.eyebrow{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1{font-size:clamp(1.9rem,5.5vw,2.55rem);letter-spacing:-.03em;margin:0 0 12px;line-height:1.12}
+.lead{color:var(--muted);font-size:1.05rem;margin:0 0 20px}
+.hero-cta{display:grid;gap:10px;margin:0 0 28px}
+.cta-sub{display:block;text-align:center;margin-top:8px;font-size:.85rem;color:var(--muted)}
+.cta-sub a{color:var(--accent);text-decoration:none}
+.btn{display:block;text-align:center;background:var(--accent2);color:#111;font-weight:700;text-decoration:none;padding:14px 16px;border-radius:12px}
+.btn:hover{filter:brightness(1.05)}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--cream)}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 28px}
+.proof div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.82rem;color:var(--muted)}
+.proof strong{display:block;color:var(--cream);font-size:.92rem;margin-bottom:2px}
+h2{font-size:1.05rem;margin:0 0 12px;letter-spacing:-.01em}
+.steps{margin:0 0 28px;padding:0;list-style:none;display:grid;gap:8px}
+.steps li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:.95rem}
+.steps b{color:var(--accent2);min-width:1.4rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin-bottom:12px}
+.card.hot{border-color:var(--accent2);box-shadow:0 0 0 1px rgba(240,180,41,.25)}
+.card h2{margin:0 0 6px;font-size:1.02rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.price{color:var(--accent);font-weight:700}
+.mini{margin-top:10px}
+.mini a{display:block;text-align:center;background:var(--accent2);color:#111;font-weight:700;text-decoration:none;padding:11px 14px;border-radius:10px;font-size:.95rem}
+.links{display:flex;flex-wrap:wrap;gap:12px 18px;font-size:.9rem;margin:18px 0 8px}
+.links a{color:var(--accent);text-decoration:none}
+.sticky{position:sticky;bottom:0;z-index:20;margin-top:24px;padding:12px 0 calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,rgba(11,13,18,.97) 28%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.sticky .btn{display:block;width:100%;box-shadow:0 8px 28px rgba(0,0,0,.45);padding:14px 16px;font-size:1rem}
+.sticky .hint{display:none;margin:0 0 8px;text-align:center;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+.note{margin-top:14px;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:.88rem}
+.pay-slot{margin:0 0 20px;padding:14px 16px;border:1px dashed rgba(240,180,41,.45);border-radius:12px;background:rgba(240,180,41,.06)}
+.pay-slot strong{display:block;color:var(--accent2);margin-bottom:6px;font-size:.88rem}
+.pay-slot p{margin:0 0 8px;color:var(--muted);font-size:.85rem}
+.pay-slot code{font-size:.78rem;color:var(--cream);word-break:break-all}
+.pay-row{display:grid;gap:8px;margin-top:10px}
+.btn-pay{display:block;text-align:center;border:1px dashed var(--line);color:var(--muted);font-weight:700;text-decoration:none;padding:12px 14px;border-radius:10px;font-size:.9rem;pointer-events:none;opacity:.75}
+.btn-pay[data-ready="1"]{pointer-events:auto;opacity:1;background:var(--accent);color:#0b0d12;border-style:solid}
+.foot{margin-top:24px;color:var(--muted);font-size:.78rem}
+@media(max-width:600px){
+  .proof{grid-template-columns:1fr}
+  .wrap{padding:28px 0 calc(108px + env(safe-area-inset-bottom,0px))}
+  .sticky{margin-left:-16px;margin-right:-16px;padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(42,49,64,.7);background:rgba(11,13,18,.98)}
+  .sticky .hint{display:block}
+  .sticky .btn{padding:15px 16px;font-size:1.02rem;border-radius:12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="nav">
+    <span><a href="index.html">Pixel &amp; Pitch</a> · <a href="book.html">All tiers</a></span>
+    <span>Same-week HTML · email to book</span>
+  </div>
+
+  <div class="eyebrow">Landing pages for indie offers</div>
+  <h1>Same-week buy pages for one offer — $99 to $449.</h1>
+  <p class="lead">One HTML file. Hard CTA. Host anywhere. Email to book now — pay buttons turn on when PayPal / Interac links are live.</p>
+
+  <div class="hero-cta">
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24149&body=Hi%20%E2%80%94%20I%20want%20the%20%24149%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A">Book $149 (most booked) — email now</a>
+    <a class="btn btn-ghost" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0AScreenshots%3A%0A">Or book $99 focus page</a>
+    <a class="btn btn-ghost" href="thanks.html">After you email — next steps</a>
+  </div>
+
+  <div class="pay-slot" id="pay-links">
+    <strong>Pay when live</strong>
+    <p>Email to book works now. When PayPal.Me / Interac URLs land, these four buttons go live — until then they stay pending.</p>
+    <div class="pay-row">
+      <!-- PAY_LINK_99 -->
+      <a class="btn-pay" data-tier="99" data-pay-url="" href="#pay-pending-99">Pay $99 — pending</a>
+      <!-- PAY_LINK_149 -->
+      <a class="btn-pay" data-tier="149" data-pay-url="" href="#pay-pending-149">Pay $149 — pending</a>
+      <!-- PAY_LINK_249 -->
+      <a class="btn-pay" data-tier="249" data-pay-url="" href="#pay-pending-249">Pay $249 — pending</a>
+      <!-- PAY_LINK_449 -->
+      <a class="btn-pay" data-tier="449" data-pay-url="" href="#pay-pending-449">Pay $449 — pending</a>
+    </div>
+
+        <p class="pay-tokens" style="margin:8px 0 0;font-size:.75rem;opacity:.75">Slots: Invoice / PayPal on accept · deposit before work</p>
+</div>
+
+  <div class="proof">
+    <div><strong>Same week</strong>Typical turnaround</div>
+    <div><strong>One HTML file</strong>Host anywhere · no CMS</div>
+    <div><strong>$99–$449</strong>Email now · pay when live</div>
+  </div>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>1</b><span>Email product name + one-line offer (screenshots optional).</span></li>
+    <li><b>2</b><span>I reply with the brief + pay link (PayPal / Interac) the same day.</span></li>
+    <li><b>3</b><span>You get a finished page — hero, proof, price, FAQ, hard CTA.</span></li>
+  </ol>
+
+  <h2>Tiers</h2>
+  <div class="card hot">
+    <h2><span class="price">$149</span> · Sell page · most booked</h2>
+    <p>Hero + features + FAQ + close. Default for indie tools and asset shops.</p>
+    <div class="mini"><a href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24149&body=Hi%20%E2%80%94%20I%20want%20the%20%24149%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $149</a></div>
+    <div class="cta-sub"><a class="btn-pay" data-tier="149" data-pay-url="" href="#pay-pending-149" style="margin-top:8px">Pay $149 — pending</a></div>
+    <div class="cta-sub"><a href="thanks.html">What happens next →</a></div>
+  </div>
+  <div class="card">
+    <h2><span class="price">$99</span> · Focus page</h2>
+    <p>One screen. One CTA. Best for a single SKU.</p>
+  <div class="mini"><a href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%2499&body=Hi%20%E2%80%94%20I%20want%20the%20%2499%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $99</a></div>
+    <div class="cta-sub"><a class="btn-pay" data-tier="99" data-pay-url="" href="#pay-pending-99" style="margin-top:8px">Pay $99 — pending</a></div>
+  </div>
+  <div class="card">
+    <h2><span class="price">$249</span> · Launch page</h2>
+    <p>Feature grid, pricing block, proof. Still one file.</p>
+  <div class="mini"><a href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24249&body=Hi%20%E2%80%94%20I%20want%20the%20%24249%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $249</a></div>
+    <div class="cta-sub"><a class="btn-pay" data-tier="249" data-pay-url="" href="#pay-pending-249" style="margin-top:8px">Pay $249 — pending</a></div>
+  </div>
+  <div class="card">
+    <h2><span class="price">$449</span> · Flagship</h2>
+    <p>Custom section map for a serious offer.</p>
+  <div class="mini"><a href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24449&body=Hi%20%E2%80%94%20I%20want%20the%20%24449%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Email to book $449</a></div>
+    <div class="cta-sub"><a class="btn-pay" data-tier="449" data-pay-url="" href="#pay-pending-449" style="margin-top:8px">Pay $449 — pending</a></div>
+  </div>
+
+  <div class="links">
+    <a href="thanks.html">After you book</a>
+    <a href="faq.html">FAQ</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="offer-b.html">Offer B (speed)</a>
+    <a href="start.html">Start (DM)</a>
+    <a href="book.html">Book all tiers →</a>
+    <a href="pixel-pitch-lp149-sell.html">See $149 sample →</a>
+    <a href="index.html">Full suite →</a>
+  </div>
+
+  <div class="sticky">
+    <div class="hint">Email to book · pay when live</div>
+    <a class="btn" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20LP%20%24149&body=Hi%20%E2%80%94%20I%20want%20the%20%24149%20landing%20page.%0A%0AProduct%20name%3A%0AOffer%20line%3A%0A">Book $149 — email now</a>
+    <div class="cta-sub" style="margin-top:6px;opacity:.85">Pay when live — slots pending</div>
+    <div class="cta-sub"><a href="thanks.html">Next steps after you send →</a></div>
+  </div>
+
+  <div class="note"><strong>What you send:</strong> product name, one-line offer, price (optional screenshots). <strong>What you get:</strong> one production HTML file, same week.</div>
+  <div class="foot">matthewpetermckenzie@gmail.com · subject “LP” · <a href="faq.html" style="color:var(--accent)">FAQ</a></div>
+</div>
+</body>
+</html>

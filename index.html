@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pixel & Pitch — landing pages for coaches & offers, plus isometric sprites and game UI for indie developers. Scoped packs, ship this week.">
+  <title>Pixel &amp; Pitch — Landing pages + game assets</title>
+  <style>
+    :root {
+      --underlay: #16161e;
+      --underlay-2: #1c1c26;
+      --panel: #242430;
+      --panel-light: #2e2e3c;
+      --cream: #f5eedf;
+      --cream-dim: #c9c0ae;
+      --orange: #efaa61;
+      --orange-deep: #d8893a;
+      --mint: #9dd3bc;
+      --line: rgba(245, 238, 223, .14);
+      --shadow: 0 24px 64px rgba(0, 0, 0, .35);
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background: var(--underlay);
+      font-family: var(--sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+
+    /* Topbar */
+    .topbar {
+      position: sticky; top: 0; z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(22, 22, 30, .9);
+      backdrop-filter: blur(12px);
+    }
+    .topbar-inner {
+      min-height: 68px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      text-decoration: none; font-size: .82rem; font-weight: 800;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .brand-mark {
+      width: 28px; height: 28px; display: grid; place-items: center;
+      color: var(--underlay); background: var(--orange);
+      border: 2px solid var(--cream); box-shadow: 3px 3px 0 var(--cream);
+      font-family: var(--mono); font-size: .7rem; font-weight: 900;
+    }
+    .nav {
+      display: flex; flex-wrap: wrap; gap: 6px 16px;
+      font-size: .78rem; color: var(--cream-dim);
+    }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--orange); }
+    .nav-cta {
+      color: var(--underlay) !important; background: var(--cream);
+      padding: 8px 12px; font-weight: 800; text-decoration: none !important;
+    }
+    .nav-cta:hover { background: var(--orange); color: var(--underlay) !important; }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 88px 0 72px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 90% 18%, rgba(157, 211, 188, .14), transparent 24rem),
+        radial-gradient(circle at 8% 95%, rgba(239, 170, 97, .14), transparent 28rem),
+        var(--underlay);
+    }
+    .hero::after {
+      content: ""; position: absolute; right: 5%; top: 18%;
+      width: 160px; height: 160px; opacity: .18; pointer-events: none;
+      background-image: radial-gradient(var(--cream) 1px, transparent 1px);
+      background-size: 12px 12px;
+      mask-image: linear-gradient(135deg, black, transparent 75%);
+    }
+    .eyebrow {
+      margin: 0 0 16px; color: var(--orange);
+      font-family: var(--mono); font-size: .74rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 820px; margin-bottom: 20px;
+      font-size: clamp(2.5rem, 6.4vw, 5.2rem);
+      line-height: .98; letter-spacing: -.06em;
+    }
+    .hero-copy {
+      max-width: 640px; margin-bottom: 28px;
+      color: var(--cream-dim); font-size: clamp(1.02rem, 2vw, 1.18rem);
+    }
+    .hero-copy strong { color: var(--cream); font-weight: 650; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 16px; text-decoration: none;
+      font-size: .84rem; font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .16s ease, background .16s ease, color .16s ease;
+    }
+    .btn-primary { color: var(--underlay); background: var(--cream); border-color: var(--cream); }
+    .btn-primary:hover { transform: translate(2px, -2px); background: var(--orange); }
+    .btn-ghost { color: var(--cream); border-color: var(--line); background: transparent; }
+    .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+    .lane-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .pill {
+      padding: 6px 10px; border: 1px solid var(--line); background: var(--panel);
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--cream-dim);
+    }
+    .pill strong { color: var(--mint); font-weight: 800; }
+
+    /* Sections */
+    main { padding: 64px 0 8px; }
+    .section { padding: 0 0 72px; }
+    .section-heading {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      line-height: 1.05; letter-spacing: -.04em;
+    }
+    .section-number { color: var(--orange); font-family: var(--mono); font-size: .78rem; white-space: nowrap; }
+    .lede {
+      max-width: 640px; margin: 0 0 26px;
+      color: var(--cream-dim); font-size: .98rem;
+    }
+
+    /* Cards & grids */
+    .card {
+      background: var(--panel); border: 1px solid var(--line);
+      box-shadow: var(--shadow); border-radius: var(--radius); overflow: hidden;
+    }
+    .two-col {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;
+    }
+    .lane-card { padding: 26px; }
+    .lane-card h3 { margin-bottom: 8px; font-size: 1.15rem; letter-spacing: -.02em; }
+    .lane-card p { margin-bottom: 16px; color: var(--cream-dim); font-size: .92rem; }
+    .lane-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 14px;
+      margin-bottom: 18px; font-family: var(--mono); font-size: .72rem; color: var(--cream-dim);
+    }
+    .lane-meta span { color: var(--orange); }
+
+    /* Gallery */
+    .still-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .still-card .sample-image {
+      width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+      image-rendering: pixelated; background: var(--underlay-2);
+    }
+    .still-card.feature { grid-column: span 2; }
+    .still-card.feature .sample-image { aspect-ratio: 16 / 9; }
+    .media-caption {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 10px 16px; padding: 14px 16px; min-height: 68px;
+      color: var(--cream-dim); font-size: .84rem;
+    }
+    .media-caption strong { color: var(--cream); font-weight: 700; display: block; }
+    .tag {
+      display: inline-block; flex-shrink: 0;
+      padding: 4px 8px; color: var(--underlay); background: var(--mint);
+      font-family: var(--mono); font-size: .64rem; font-weight: 800;
+      letter-spacing: .05em; text-transform: uppercase;
+    }
+
+    /* Pricing cards */
+    .price-grid {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;
+    }
+    .price-card { padding: 22px 18px; display: flex; flex-direction: column; gap: 10px; min-height: 100%; }
+    .price-card .tier {
+      font-family: var(--mono); font-size: .68rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--orange);
+    }
+    .price-card h3 { margin: 0; font-size: 1.05rem; letter-spacing: -.02em; }
+    .price {
+      font-size: 1.85rem; font-weight: 800; letter-spacing: -.04em; line-height: 1;
+    }
+    .price small { font-size: .72rem; color: var(--cream-dim); font-weight: 600; letter-spacing: 0; }
+    .price-card ul {
+      margin: 4px 0 12px; padding: 0 0 0 1.1rem;
+      color: var(--cream-dim); font-size: .84rem; flex: 1;
+    }
+    .price-card li { margin-bottom: 6px; }
+    .price-card .btn { margin-top: auto; justify-content: center; width: 100%; }
+    .price-card.featured {
+      border-color: rgba(239, 170, 97, .45);
+      background: linear-gradient(180deg, rgba(239, 170, 97, .08), var(--panel));
+    }
+
+    .game-grid {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+    }
+
+    /* LP demo */
+    .landing-grid {
+      display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 18px; align-items: start;
+    }
+    .iframe-wrap { padding: 10px; background: var(--panel); }
+    iframe {
+      display: block; width: 100%; height: 460px; border: 0;
+      border-radius: 8px; background: #f7f3ea;
+    }
+    .demo-aside { padding: 22px; color: var(--cream-dim); font-size: .9rem; }
+    .demo-aside h3 { margin-bottom: 8px; color: var(--cream); font-size: 1.05rem; }
+    .demo-aside p { margin-bottom: 16px; }
+    .text-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--orange); font-size: .82rem; font-weight: 800;
+      text-underline-offset: 4px;
+    }
+    .lp-links {
+      display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 18px;
+    }
+
+    /* How it works */
+    .steps {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+    }
+    .step { padding: 22px; }
+    .step-num {
+      margin-bottom: 12px; color: var(--orange);
+      font-family: var(--mono); font-size: .75rem; font-weight: 800;
+    }
+    .step h3 { margin-bottom: 8px; font-size: 1rem; }
+    .step p { margin: 0; color: var(--cream-dim); font-size: .9rem; }
+
+    /* Contact CTA */
+    .cta-band {
+      padding: 36px 28px;
+      background:
+        linear-gradient(135deg, rgba(239, 170, 97, .12), transparent 55%),
+        var(--panel);
+      border: 1px solid rgba(239, 170, 97, .28);
+      border-radius: var(--radius);
+      display: grid; gap: 18px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+    .cta-band h2 { margin-bottom: 8px; }
+    .cta-band p { margin: 0; color: var(--cream-dim); max-width: 520px; }
+    .cta-actions { display: flex; flex-direction: column; gap: 10px; }
+    .note-pay {
+      margin-top: 14px; color: var(--cream-dim);
+      font-size: .82rem; font-family: var(--mono);
+    }
+
+    footer {
+      padding: 28px 0 48px; border-top: 1px solid var(--line);
+      color: var(--cream-dim); font-size: .82rem;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; gap: 16px 28px; flex-wrap: wrap;
+    }
+    .footer-label { color: var(--cream); font-weight: 800; }
+    .contact { color: var(--orange); font-family: var(--mono); font-size: .78rem; text-decoration: none; }
+    .contact:hover { text-decoration: underline; }
+
+    @media (max-width: 980px) {
+      .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .still-card.feature { grid-column: span 1; }
+      .still-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .game-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 28px, 1120px); }
+      .nav .hide-sm { display: none; }
+      .hero { padding: 60px 0 52px; }
+      .two-col, .landing-grid, .steps, .cta-band { grid-template-columns: 1fr; }
+      iframe { height: 520px; }
+      .still-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .price-grid { grid-template-columns: 1fr; }
+      .section { padding-bottom: 56px; }
+      .section-heading { display: block; }
+      .section-number { display: block; margin-bottom: 8px; }
+      iframe { height: 560px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top" aria-label="Pixel and Pitch home">
+        <span class="brand-mark" aria-hidden="true">P&amp;P</span>
+        <span>Pixel &amp; Pitch</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a class="hide-sm" href="#lanes">Offers</a>
+        <a class="hide-sm" href="#work">Proof</a>
+        <a class="hide-sm" href="#lp-tiers">LP tiers</a>
+        <a class="hide-sm" href="#game-packs">Game packs</a>
+        <a class="nav-cta" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20inquiry">Email to book</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" class="hero">
+    <div class="shell">
+      <p class="eyebrow">Studio menu · scoped &amp; shippable</p>
+      <h1>Landing pages for offers.<br>Sprites &amp; UI for indies.</h1>
+      <p class="hero-copy"><strong>Pixel &amp; Pitch</strong> ships one clear page or one clear asset pack — not a 10-page agency site, not a full art department. Sample work below is labeled honestly.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#lp-tiers">See LP tiers <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="#game-packs">See game packs</a>
+        <a class="btn btn-ghost" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20inquiry">Email to book · pay when live</a>
+      </div>
+      <div class="lane-pills" aria-label="Two offers">
+        <span class="pill"><strong>A</strong> · Single-HTML landing pages · $99–$449</span>
+        <span class="pill"><strong>B</strong> · Iso sprites &amp; game UI · $79–$399</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section id="lanes" class="section" aria-labelledby="lanes-title">
+      <div class="section-heading">
+        <span class="section-number">01 / what we sell</span>
+        <h2 id="lanes-title">Two lanes. Same studio.</h2>
+      </div>
+      <p class="lede">Pick the track that matches your project. Separate invoice if you need both.</p>
+      <div class="two-col">
+        <article class="card lane-card">
+          <h3>Landing pages for coaches &amp; offers</h3>
+          <p>Conversion-structured one-pagers: hero, offer, proof, CTA, FAQ. Mobile-friendly. Copy polished from your bullets. Form or booking link embed — your tools.</p>
+          <div class="lane-meta">
+            <span>$99</span> intro · <span>$149</span> starter · <span>$249</span> standard · <span>$449</span> premium
+          </div>
+          <a class="text-link" href="#lp-tiers">Browse LP tiers <span aria-hidden="true">↓</span></a>
+        </article>
+        <article class="card lane-card">
+          <h3>Isometric sprites &amp; game UI</h3>
+          <p>Game-ready PNG packs for indie / jam / prototype work: HUD kits, iso characters or props, and a combined prototype pack with simple style notes.</p>
+          <div class="lane-meta">
+            <span>$79</span> UI kit · <span>$179</span> sprite starter · <span>$399</span> prototype pack
+          </div>
+          <a class="text-link" href="#game-packs">Browse game packs <span aria-hidden="true">↓</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section" aria-labelledby="work-title">
+      <div class="section-heading">
+        <span class="section-number">02 / proof gallery</span>
+        <h2 id="work-title">Real stills from the studio</h2>
+      </div>
+      <p class="lede">Honest samples — not a shipped commercial title. Built to show readable UI states, isometric range, and panel craft.</p>
+      <div class="still-grid">
+        <article class="card still-card feature">
+          <img class="sample-image" src="stills/pixel-pitch-ui-kit-sample.png" alt="Pixel and Pitch Game UI Kit sample sheet with bars, icons, panel, and button states" loading="eager">
+          <div class="media-caption">
+            <span><strong>Game UI Kit sheet</strong>Bars, icons, panel, button states</span>
+            <span class="tag">UI · $79</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-iso-zombie-sample.png" alt="Isometric zombie character sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Iso zombie</strong>Character / sprite sample</span>
+            <span class="tag">sprite</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-gothic-panel-sample.png" alt="Gothic ornate pixel UI panel with gold filigree" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Gothic panel</strong>Ornate frame study</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-ui-contact-sheet.png" alt="UI contact sheet of multiple game interface samples" loading="lazy">
+          <div class="media-caption">
+            <span><strong>UI contact sheet</strong>Multi-piece overview</span>
+            <span class="tag">sheet</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-ornate-frame-sample.png" alt="Ornate pixel art frame sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Ornate frame</strong>Decorative border</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-quest-tracker-sample.png" alt="Quest tracker UI sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Quest tracker</strong>HUD readouts</span>
+            <span class="tag">HUD</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-hotbar-sample.png" alt="Game hotbar UI sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Hotbar</strong>Ability row</span>
+            <span class="tag">HUD</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-inventory-grid-sample.png" alt="Inventory grid UI sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Inventory grid</strong>Slot layout</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-dialogue-box-sample.png" alt="Dialogue box UI sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Dialogue box</strong>Conversation frame</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-iso-props-sample.png" alt="Isometric props sample sheet" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Iso props</strong>Prop / tile vibe</span>
+            <span class="tag">props</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-button-states-sample.png" alt="Button states sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Button states</strong>Normal / hover / pressed</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+        <article class="card still-card">
+          <img class="sample-image" src="stills/pixel-pitch-paperdoll-sample.png" alt="Paperdoll equipment UI sample" loading="lazy">
+          <div class="media-caption">
+            <span><strong>Paperdoll</strong>Equip layout</span>
+            <span class="tag">UI</span>
+          </div>
+        </article>
+      </div>
+      <p class="lede" style="margin-top:20px">Itch listing draft exists for an iso UI starter pack — not claiming a live itch storefront URL here.</p>
+    </section>
+
+    <section id="lp-demo" class="section" aria-labelledby="lp-demo-title">
+      <div class="section-heading">
+        <span class="section-number">03 / LP sample</span>
+        <h2 id="lp-demo-title">Landing page demo</h2>
+      </div>
+      <p class="lede">Clarity Coaching — sample offer page structure (demo, not a live client).</p>
+      <div class="landing-grid">
+        <div class="card iframe-wrap">
+          <iframe src="clarity-coaching-demo.html" title="Clarity Coaching sample coaching offer page" loading="lazy"></iframe>
+        </div>
+        <aside class="card demo-aside">
+          <h3>Clarity Coaching</h3>
+          <p>Sample coaching offer page showing hero → offer → CTA hierarchy.</p>
+          <a class="text-link" href="clarity-coaching-demo.html">Open full demo <span aria-hidden="true">↗</span></a>
+          <div class="lp-links">
+            <a class="text-link" href="lp/offer.html">Offer overview</a>
+            <a class="text-link" href="lp/pricing.html">Pricing</a>
+            <a class="text-link" href="lp/samples.html">More samples</a>
+            <a class="text-link" href="lp/faq.html">FAQ</a>
+            <a class="text-link" href="lp/start.html">Start</a>
+            <a class="text-link" href="lp/book.html">Book</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="lp-tiers" class="section" aria-labelledby="lp-tiers-title">
+      <div class="section-heading">
+        <span class="section-number">04 / landing page tiers</span>
+        <h2 id="lp-tiers-title">Offer pages — fixed scope</h2>
+      </div>
+      <p class="lede">Email to book · pay when live. No invented checkout links — invoice / email until real pay links exist.</p>
+      <div class="price-grid">
+        <article class="card price-card">
+          <div class="tier">Intro</div>
+          <h3>Focus page</h3>
+          <div class="price">$99 <small>first seats</small></div>
+          <ul>
+            <li>1 single landing page</li>
+            <li>Core sections + CTA</li>
+            <li>1 revision · fast spine</li>
+          </ul>
+          <a class="btn btn-ghost" href="lp/pixel-pitch-lp99-sell.html">Open $99 sell page</a>
+        </article>
+        <article class="card price-card featured">
+          <div class="tier">Starter · most booked</div>
+          <h3>Offer Page Sprint</h3>
+          <div class="price">$149</div>
+          <ul>
+            <li>Hero → offer → FAQ → CTA</li>
+            <li>Copy polish from your bullets</li>
+            <li>1 revision · 3–5 day target</li>
+          </ul>
+          <a class="btn btn-primary" href="lp/pixel-pitch-lp149-sell.html">Open $149 sell page</a>
+        </article>
+        <article class="card price-card">
+          <div class="tier">Standard</div>
+          <h3>Launch + Proof</h3>
+          <div class="price">$249</div>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Proof section + thank-you page</li>
+            <li>2 revisions · SEO basics</li>
+          </ul>
+          <a class="btn btn-ghost" href="lp/pixel-pitch-lp249-sell.html">Open $249 sell page</a>
+        </article>
+        <article class="card price-card">
+          <div class="tier">Premium</div>
+          <h3>Offer + Booking</h3>
+          <div class="price">$449</div>
+          <ul>
+            <li>Booking / checkout wiring (your accounts)</li>
+            <li>Brand polish + handoff Loom</li>
+            <li>3 revisions</li>
+          </ul>
+          <a class="btn btn-ghost" href="lp/pixel-pitch-lp449-sell.html">Open $449 sell page</a>
+        </article>
+      </div>
+      <div class="lp-links" style="margin-top:18px">
+        <a class="text-link" href="lp/offer.html">Full offer page</a>
+        <a class="text-link" href="lp/offer-b.html">Speed angle</a>
+        <a class="text-link" href="lp/book.html">Book all tiers</a>
+        <a class="text-link" href="lp/thanks.html">Thanks / next steps</a>
+      </div>
+    </section>
+
+    <section id="game-packs" class="section" aria-labelledby="game-title">
+      <div class="section-heading">
+        <span class="section-number">05 / game asset packs</span>
+        <h2 id="game-title">Sprites &amp; UI for indies</h2>
+      </div>
+      <p class="lede">Transparent PNGs, consistent style within the pack, commercial use for one game title. Extra frames / tiles = written add-on.</p>
+      <div class="game-grid">
+        <article class="card price-card">
+          <div class="tier">Starter</div>
+          <h3>Game UI Kit</h3>
+          <div class="price">$79</div>
+          <ul>
+            <li>Health / resource bar</li>
+            <li>6–10 icons + panel/frame</li>
+            <li>Primary button states</li>
+            <li>1 revision · 2–4 days</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20Game%20UI%20Kit%20%2479&body=Hi%20%E2%80%94%20I%20want%20the%20Game%20UI%20Kit%20(%2479).%0A%0AGame%20pitch%3A%0APerspective%20%2F%20pixel%20size%3A%0ARefs%3A%0A">Email to book · pay when live</a>
+        </article>
+        <article class="card price-card featured">
+          <div class="tier">Standard</div>
+          <h3>Isometric Sprite Starter</h3>
+          <div class="price">$179</div>
+          <ul>
+            <li>1 character/prop hero <em>or</em> 8–12 props/tiles</li>
+            <li>PNG + sheet if multi-frame</li>
+            <li>2 revisions · 4–7 days</li>
+          </ul>
+          <a class="btn btn-primary" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20Iso%20Sprite%20Starter%20%24179&body=Hi%20%E2%80%94%20I%20want%20the%20Isometric%20Sprite%20Starter%20(%24179).%0A%0ATrack%20(character%20or%20props)%3A%0APerspective%3A%0AAsset%20list%3A%0A">Email to book · pay when live</a>
+        </article>
+        <article class="card price-card">
+          <div class="tier">Premium</div>
+          <h3>Prototype Pack</h3>
+          <div class="price">$399</div>
+          <ul>
+            <li>UI Kit + character set <em>or</em> small tileset</li>
+            <li>1-page style notes</li>
+            <li>2 revisions · ~7–12 days</li>
+          </ul>
+          <a class="btn btn-ghost" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20Prototype%20Pack%20%24399&body=Hi%20%E2%80%94%20I%20want%20the%20Prototype%20Pack%20(%24399).%0A%0AGame%20pitch%3A%0ATrack%20(character%20or%20tiles)%3A%0AAsset%20list%3A%0A">Email to book · pay when live</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="section" aria-labelledby="how-title">
+      <div class="section-heading">
+        <span class="section-number">06 / how it works</span>
+        <h2 id="how-title">Simple path</h2>
+      </div>
+      <div class="steps">
+        <article class="card step">
+          <div class="step-num">01</div>
+          <h3>Email the brief</h3>
+          <p>Offer bullets or asset list + refs. Clock starts when the required intake lands.</p>
+        </article>
+        <article class="card step">
+          <div class="step-num">02</div>
+          <h3>Pay when live</h3>
+          <p>Until durable PayPal / Interac links exist, you get an invoice or emailed pay link same day — never a fake button.</p>
+        </article>
+        <article class="card step">
+          <div class="step-num">03</div>
+          <h3>Ship in scope</h3>
+          <p>One page or one pack. Revisions as listed. Change-orders quoted in writing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="cta-band">
+        <div>
+          <h2 id="contact-title">Ready to book?</h2>
+          <p>Say which lane and tier. Include product/game name, one-line offer or asset list, and any refs. Email to book · pay when live.</p>
+          <p class="note-pay">Pay slots: pending until real PAYLINKS are pasted. No paypal.me placeholders on this site.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:unincelling@proton.me?subject=Pixel%20%26%20Pitch%20%E2%80%94%20book&body=Hi%20%E2%80%94%20I%20want%20to%20book.%0A%0ALane%20(LP%20or%20game)%3A%0ATier%3A%0ABrief%3A%0A">Email unincelling@proton.me</a>
+          <a class="btn btn-ghost" href="lp/start.html">LP start checklist</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <div><span class="footer-label">Pixel &amp; Pitch</span> · Landing pages + isometric / game UI · samples labeled honestly</div>
+      <a class="contact" href="mailto:unincelling@proton.me">unincelling@proton.me</a>
+    </div>
+  </footer>
+</body>
+</html>
