@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walkthroughs, Shorts Packs &amp; Research Briefs in Victoria BC | Matthew</title>
+  <meta name="description" content="Local Victoria BC listing walkthroughs, Shorts/Reels packs, research briefs, video editing (Premiere Pro, After Effects), and landing pages. Fast turnaround. Contact Matthew at unincelling@proton.me.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Walkthroughs, Shorts Packs &amp; Research Briefs in Victoria BC | Matthew">
+  <meta property="og:description" content="Local Victoria BC creator for walkthroughs, Shorts packs, research briefs, and landing pages. Fast quotes. Email unincelling@proton.me.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a222c;
+      --border: #2a3544;
+      --text: #e8eef4;
+      --muted: #9aa8b8;
+      --accent: #3db8a0;
+      --accent-hover: #4fd0b6;
+      --warn: #e8c547;
+      --radius: 10px;
+      --max: 720px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+    a { color: var(--accent); }
+    a:hover { color: var(--accent-hover); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 20, 25, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+    .brand { font-weight: 700; font-size: 1rem; color: var(--text); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.85rem; font-size: 0.9rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #0a1210 !important;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover { background: var(--accent-hover); }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent) !important;
+      border: 2px solid var(--accent);
+    }
+    .btn-outline:hover { background: rgba(61, 184, 160, 0.12); }
+    .hero { padding: 2.5rem 0 2rem; }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--warn);
+      background: rgba(232, 197, 71, 0.12);
+      border: 1px solid rgba(232, 197, 71, 0.35);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.35rem);
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+    .lead { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem; max-width: 38rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
+    .fine { font-size: 0.9rem; color: var(--muted); }
+    section { padding: 2.25rem 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 1.45rem; margin-bottom: 0.75rem; }
+    h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .sub { color: var(--muted); margin-bottom: 1.25rem; }
+    ul.check { list-style: none; }
+    ul.check li {
+      padding: 0.45rem 0 0.45rem 1.5rem;
+      position: relative;
+      color: var(--text);
+    }
+    ul.check li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .cards {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 560px) {
+      .cards.cols-2 { grid-template-columns: 1fr 1fr; }
+      .cards.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+    }
+    .card p { color: var(--muted); font-size: 0.95rem; margin-top: 0.35rem; }
+    .price {
+      margin-top: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+    .price-note {
+      display: block;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: var(--warn);
+      margin-top: 0.25rem;
+    }
+    .steps { counter-reset: step; list-style: none; }
+    .steps li {
+      counter-increment: step;
+      padding: 0.85rem 0 0.85rem 2.75rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.85rem;
+      width: 1.85rem;
+      height: 1.85rem;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .contact-box .email {
+      font-size: 1.2rem;
+      font-weight: 700;
+      word-break: break-all;
+      margin: 0.75rem 0 1.25rem;
+    }
+    .disclaimer {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      padding: 0.85rem;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+    }
+    footer {
+      padding: 2rem 0 2.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">Matthew <span>· Victoria BC</span></a>
+      <nav class="nav-links" aria-label="Page">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#shorts">Shorts Pack</a>
+        <a href="#briefs">Research Brief</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <p class="badge">Victoria BC · Local work · Taking projects now through mid-October</p>
+      <h1>Walkthroughs, Shorts packs, landing pages, and research briefs — done locally in Victoria.</h1>
+      <p class="lead">Need a listing walkthrough, a Shorts/Reels pack from your long footage, a simple client landing page, or a focused Victoria research brief? I edit and build the work myself. Fast quotes. Clear scope. Local and available.</p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:unincelling@proton.me?subject=Victoria%20project%20inquiry">Email for a quote</a>
+        <a class="btn btn-outline" href="#packages">See example packages</a>
+      </div>
+      <p class="fine">Contact: <a href="mailto:unincelling@proton.me">unincelling@proton.me</a> · Based in Victoria, British Columbia</p>
+    </div>
+
+    <section id="who">
+      <div class="wrap">
+        <h2>Who this is for</h2>
+        <p class="sub">Local businesses, creators, and buyers in Greater Victoria who need paid creative work turned around soon — not a six-week brand deck.</p>
+        <ul class="check">
+          <li>REALTORS® who need MLS-ready walkthroughs and captioned Shorts/Reels — plus studios, shops, and service businesses with long footage to cut</li>
+          <li>Anyone selling or launching locally who needs a clean one-page site or client landing page</li>
+          <li>Anyone who wants a productized Research Brief ($125, or $300 for 3) for local copy, FAQs, or competitor angles</li>
+          <li>Marketplace and Kijiji leads who want a real local person, not an overseas mill</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <h2>What I actually do</h2>
+        <p class="sub">Only the skills I use myself — no invented specialties.</p>
+        <div class="cards cols-2">
+          <div class="card">
+            <h3>Listing walkthroughs &amp; reels</h3>
+            <p>Cinematic listing walkthroughs (about 60–90 seconds) plus vertical Instagram/Facebook reels. Premiere Pro and After Effects. Phone or camera footage — I shoot and edit, or edit yours.</p>
+          </div>
+          <div class="card">
+            <h3>Shorts / Reels packs</h3>
+            <p>Turn your long video into 3–5 human 9:16 Shorts for TikTok / IG / YouTube Shorts — hooks, cuts, captions on Standard &amp; Rush. Digital Drive/Dropbox delivery.</p>
+          </div>
+          <div class="card">
+            <h3>Landing &amp; client pages</h3>
+            <p>Simple, clear pages built to convert inquiries — for offers, events, services, listings, or a single product. Mobile-friendly and ready to send.</p>
+          </div>
+          <div class="card">
+            <h3>Research briefs</h3>
+            <p>One focused Victoria question: sourced findings with URLs, recommendations, and next steps you can reuse in Shorts captions or a landing page. $125 each, or $300 for a pack of 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages">
+      <div class="wrap">
+        <h2>Example packages</h2>
+        <p class="sub">These ranges are <strong>EXAMPLE DRAFT PRICES</strong> in CAD for discussion only. Confirm every quote with me before booking. Final price depends on length, assets, revisions, and deadline.</p>
+        <div class="cards cols-2">
+          <div class="card">
+            <h3>Walkthrough Lite</h3>
+            <p>MLS-friendly property walkthrough edit, roughly 45–75 seconds, one revision, horizontal MP4. For listings up to about 2,000 sq ft unless we agree otherwise.</p>
+            <p class="price">EXAMPLE DRAFT: $175–$225 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Walkthrough + Reel</h3>
+            <p>Walkthrough plus a 15–30 second vertical reel for Instagram / Facebook. Agent end-card available.</p>
+            <p class="price">EXAMPLE DRAFT: $249–$325 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Tour Page bundle</h3>
+            <p>Walkthrough + reel plus a simple one-page listing or agent landing page for that property.</p>
+            <p class="price">EXAMPLE DRAFT: $349–$449 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Promo / social video edit</h3>
+            <p>Short cut from your footage or files. Basic colour, titles, audio tidy, export for Instagram / Facebook / web.</p>
+            <p class="price">EXAMPLE DRAFT: $150–$450 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Event or longer edit</h3>
+            <p>Multi-clip timeline, After Effects motion where needed, tighter polish for events, reels packages, or client handoff.</p>
+            <p class="price">EXAMPLE DRAFT: $400–$1,200+ CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>One-page landing / client page</h3>
+            <p>Single focused page: headline, offer, proof points you provide, and a clear contact CTA. Built to send to leads.</p>
+            <p class="price">EXAMPLE DRAFT: $250–$750 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Sprite / UI / isometric pack</h3>
+            <p>Scoped set of game or UI assets (count and style agreed up front). Ideal for prototypes and indie builds.</p>
+            <p class="price">EXAMPLE DRAFT: $200–$800+ CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+        </div>
+        <p class="disclaimer"><strong>Pricing note:</strong> Nothing on this page is a binding rate card. Rush jobs, stock licensing, hosting, filming, and major scope changes are extra and must be agreed in writing (email is fine) before work starts. Prefer a clear brief + deposit for new clients.</p>
+      </div>
+    </section>
+
+
+    <section id="shorts">
+      <div class="wrap">
+        <h2>Shorts Pack</h2>
+        <p class="sub">You already have (or will shoot) a <strong>long video</strong> — listing walkthrough, class, BTS, interview, event, or brand story. I turn it into vertical Shorts / Reels (9:16) with human Premiere / After Effects polish — not faceless stock spam. Digital-only handoff via Drive or Dropbox. 50% Interac deposit to start.</p>
+        <p class="sub" style="margin-top:-0.5rem">These ranges are <strong>EXAMPLE DRAFT PRICES</strong> in CAD. Confirm every quote before booking. Final price depends on raw length, cameras, caption style, music licensing, and revisions. GST extra if applicable.</p>
+        <div class="cards cols-3">
+          <div class="card">
+            <h3>Lite</h3>
+            <p>~3 Shorts (9:16) from your long footage. Hooks, clean cuts, vertical reframes, audio levels.</p>
+            <p class="price">EXAMPLE DRAFT: ~$175–$225 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Standard</h3>
+            <p>~5 Shorts + burned-in or sidecar captions. Ready for TikTok / IG / YouTube Shorts.</p>
+            <p class="price">EXAMPLE DRAFT: ~$249–$325 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+          <div class="card">
+            <h3>Rush</h3>
+            <p>~5 Shorts + 1 longer reel cut + <strong>~48h</strong> turnaround (when calendar allows).</p>
+            <p class="price">EXAMPLE DRAFT: ~$349–$449 CAD<span class="price-note">Confirm with Matthew — not a fixed rate</span></p>
+          </div>
+        </div>
+        <p class="fine" style="margin-top:1rem">Typical turnaround after deposit + footage: Lite / Standard <strong>3–5 business days</strong> · Rush <strong>~48 hours</strong>. One round of light revisions included. Pair with a listing walkthrough or a Research Brief for matching local copy.</p>
+        <p class="cta-row" style="margin-top:1rem">
+          <a class="btn" href="mailto:unincelling@proton.me?subject=Shorts%20Pack%20inquiry">Email about a Shorts Pack</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="briefs">
+      <div class="wrap">
+        <h2>Research Brief</h2>
+        <p class="sub">Productized local research you can paste into Shorts captions, a listing page, or client talking points — not a six-week brand deck.</p>
+        <div class="cards cols-2">
+          <div class="card">
+            <h3>Single Research Brief</h3>
+            <p>One focused question (neighbourhood buyer FAQ, competitor listing angle, “why this street / this trade”). Sourced findings with URLs, recommendations, and next steps.</p>
+            <p class="price">$125 CAD<span class="price-note">Confirm scope with Matthew before booking</span></p>
+          </div>
+          <div class="card">
+            <h3>Brief pack of 3</h3>
+            <p>Three focused briefs at a bundle rate — useful when you want caption angles plus a landing-page FAQ plus a competitor note.</p>
+            <p class="price">$300 CAD for 3<span class="price-note">Confirm topics with Matthew before booking</span></p>
+          </div>
+        </div>
+        <p class="fine" style="margin-top:1rem">Ask for the brief template + a Victoria example. Pairs cleanly with a Shorts Pack or walkthrough + landing page.</p>
+        <p class="cta-row" style="margin-top:1rem">
+          <a class="btn btn-outline" href="mailto:unincelling@proton.me?subject=Research%20Brief%20inquiry">Email about a Research Brief</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <p class="sub">Built for speed — especially if you need something before mid-October.</p>
+        <ol class="steps">
+          <li><strong>Email the brief.</strong> What you need, deadline, files or links you already have, and budget ballpark if you have one.</li>
+          <li><strong>I reply with a quote.</strong> Scope, turnaround, and price in CAD. No pressure pitch.</li>
+          <li><strong>Agree + start.</strong> Confirm by email. Deposit for new clients if we agree on one. Then I do the work.</li>
+          <li><strong>Review + deliver.</strong> One focused revision round included unless we agree otherwise. You get the files; you pay the balance.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="local">
+      <div class="wrap">
+        <h2>Why local Victoria matters</h2>
+        <p class="sub">Same city, same timezone, same street-level context. Easier handoffs for local businesses and marketplace buyers who want someone reachable — not a faceless form overseas.</p>
+        <ul class="check">
+          <li>Victoria / Greater Victoria clients welcome (in-person meetups optional if useful)</li>
+          <li>I pitch, reply, and quote freely — email is enough to start</li>
+          <li>No fake case studies or borrowed logos on this page. Ask for samples relevant to your job.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <h2>Ready to book or get a quote?</h2>
+          <p class="sub" style="margin-bottom:0.25rem">Send what you need and your deadline. I reply as capacity allows — priority on projects that can start soon.</p>
+          <p class="email"><a href="mailto:unincelling@proton.me?subject=Victoria%20project%20inquiry">unincelling@proton.me</a></p>
+          <a class="btn" href="mailto:unincelling@proton.me?subject=Victoria%20project%20inquiry&amp;body=Hi%20Matthew%2C%0A%0AProject%20type%3A%20(walkthrough%20%2F%20Shorts%20pack%20%2F%20research%20brief%20%2F%20landing%20page)%0ADeadline%3A%0ABrief%3A%0ABudget%20ballpark%20(optional)%3A%0A">Open email with a starter template</a>
+          <p class="fine" style="margin-top:1rem">Matthew · Victoria, British Columbia, Canada</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Matthew · Victoria BC · Walkthroughs, Shorts packs, research briefs, and landing pages</p>
+      <p style="margin-top:0.35rem"><a href="mailto:unincelling@proton.me">unincelling@proton.me</a></p>
+    </div>
+  </footer>
+</body>
+</html>
